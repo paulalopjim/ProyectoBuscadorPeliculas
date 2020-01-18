@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="buscarCSS.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-sm navbar-dark" style="background-color: black;">
+        <a class="navbar-brand logo" href="#">
+            <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
+        </a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" id="titulo">
+            <button class="btn btn-outline-primary" type="submit" id="buscar">Search</button>
+
+        </div>
+    </nav>
+    <div id="div1">
+
+    </div>
+    <!-- Modal -->
+    <div class="modal fade  bd-example-modal-lg" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Modal title</h2>
+                    <div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class='row'>
+                            <div class='col-12 col-sm-7'>
+                                <img id='imagen'>
+                            </div>
+                            <div id="descripcion" class='col-12 col-sm-5'>
+                                <h4><strong>Genre</strong></h4>
+                                <p id="genero"></p>
+                                <h4><strong>Release</strong></h4>
+                                <p id="estreno"></p>
+                                <h4><strong>Rating</strong></h4>
+                                <p id="puntuacion"></p>
+                            </div>
+                        </div>
+                        <div class='row'>
+                                <div id="colapse" class='col-12'>
+                                    <h4><strong>Plot</strong></h4>
+                                    <p id="sinopsis"></p>
+                                    <a href="#demo" class="card-link" data-toggle="collapse">More...</a>
+                                    <div id="demo" class="collapse">
+                                        <h4><strong>Director</strong></h4>
+                                        <p id="director"></p>
+                                        <h4><strong>Writer</strong></h4>
+                                        <p id="escritor"></p>
+                                        <h4><strong>Actors</strong></h4>
+                                        <p id="actores"></p>
+                                    </div>
+                                </div>
+                            <div class="modal-footer">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="buscarJS.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

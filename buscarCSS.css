@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+#buscar{
+    width: 20%;
+}
+.card img {
+    width: 100%;
+    height: 85%;
+    object-fit: cover;
+}
+#div1{
+    margin-top: 4.3em;
+}
+.card {
+    margin: 0.13em;
+    width: 15em;
+    height: 30em;
+    border: 1px solid black
+}
+
+h5 {
+    font-size: 0.8rem;
+    box-sizing: border-box;
+}
+
+#buscar {
+    color: white;
+}
+
+nav {
+    width: 100%;
+}
+
+#modelId {
+    vertical-align: middle;
+}
+
+#imagen {
+    width: 100%;
+    height: 26.25em;
+}
+.close{
+    width: auto;
+    height: auto;
+}
+#logo{
+    width: 200px;
+    height: 200px;
+}
