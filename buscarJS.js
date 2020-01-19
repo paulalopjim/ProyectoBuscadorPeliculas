@@ -1,4 +1,4 @@
-var url = "http://www.omdbapi.com/?"
+var url = "https://www.omdbapi.com/?"
 var apikey = "apikey=56686ffa"
 var pagina = 1;
 $("#buscar").on("click", () => reiniciar());
