@@ -10,21 +10,21 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="buscarCSS.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
 </head>
 
 <body>
     <nav class="navbar fixed-top navbar-expand-sm navbar-dark" style="background-color: black;">
         <a class="navbar-brand logo" href="#">
-            <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
+            <img src="imagen\logoP.png" id='logo'alt="">
         </a>
-        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+        <button class="navbar-toggler d-lg-none btn-lg" id='botonDesplegable'type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" id="titulo">
-            <button class="btn btn-outline-primary" type="submit" id="buscar">Search</button>
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" id="buscar">Search</button>
 
         </div>
     </nav>
@@ -56,6 +56,15 @@
                                 <p id="estreno"></p>
                                 <h4><strong>Rating</strong></h4>
                                 <p id="puntuacion"></p>
+                                <div>
+                                      <div class="star-rating">
+                                        <span class="fa fa-star-o" id='1'></span>
+                                        <span class="fa fa-star-o" id='2'></span>
+                                        <span class="fa fa-star-o" id='3'></span>
+                                        <span class="fa fa-star-o" id='4'></span>
+                                        <span class="fa fa-star-o" id='5'></span>
+                                    </div>
+
                             </div>
                         </div>
                         <div class='row'>
@@ -72,9 +81,6 @@
                                         <p id="actores"></p>
                                     </div>
                                 </div>
-                            <div class="modal-footer">
-
-                            </div>
                         </div>
                     </div>
                 </div>

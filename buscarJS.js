@@ -3,21 +3,22 @@ var apikey = "apikey=56686ffa"
 var pagina = 1;
 $("#buscar").on("click", () => reiniciar());
 $(window).scroll(buscar);
-
+//
 function reiniciar() {
     $('#div1').empty();
     pagina = 1;
     buscar();
 }
-
+//
 function buscar() {
-    if (($(window).scrollTop() + $(window).height() >= $(document).height() - 100)) {
+    if (($(window).scrollTop() + $(window).height() >= $(document).height() - 150)) {
         var cargar = $('<div>');
         $(cargar).attr('class', 'spinner-grow text-primary');
         $('#div1').append(cargar);
         var nombreBuscar = $("#titulo").val();
         var nombre = nombreBuscar.split(" ");
         var buscar = "";
+        //
         for (x = 0; x < nombre.length; x++) {
             if (x == 0 && nombre.length > 1) {
                 buscar += nombre[x] + "+";
@@ -42,7 +43,7 @@ function buscar() {
 }
 
 function colocarPeliculas(respuesta) {
-    $('#div1').attr('class', 'row')
+    $('#div1').attr('class', 'row justify-content-center')
     $.each(respuesta.Search, function (ind, peliculas) {
         //
         let pelicula = $('<div>');
@@ -60,14 +61,18 @@ function colocarPeliculas(respuesta) {
         } else {
             $(imagen).attr('src', imagen.url);
         }
+        //
         $(pelicula).append(imagen);
         $(pelicula).mouseenter(function () {
             $(imagen).css({
                 "opacity": "0.6 ",
-                "transition": "2s"
+                "transition": "1s"
+
             })
             $(pelicula).css({
-                "border": " 3px inset blue"
+                "color": "white",
+                "background-color": "#2A95E3",
+                "transition": "1s"
             })
         })
         $(pelicula).mouseleave(function () {
@@ -76,7 +81,9 @@ function colocarPeliculas(respuesta) {
                 "transition": "1s"
             })
             $(pelicula).css({
-                "border": "1px solid black"
+                "color": "black",
+                "background-color": "white",
+                "transition": "1s"
             })
         })
         //
@@ -90,7 +97,7 @@ function colocarPeliculas(respuesta) {
     })
 
 }
-
+//
 function datosPelicula(id) {
     let id1 = "i=" + id;
     let urlDatos = url + id1 + "&" + apikey;
@@ -103,7 +110,54 @@ function datosPelicula(id) {
     })
 
 }
-
+//
+function pintarEstrellas(respuesta) {
+    let puntuacion = respuesta.imdbRating;
+    switch (Math.round((puntuacion / 2))) {
+        case 1:
+            $('#1').attr('class', 'fa fa-star-o checked');
+            $('#2').attr('class', 'fa fa-star-o');
+            $('#3').attr('class', 'fa fa-star-o');
+            $('#4').attr('class', 'fa fa-star-o');
+            $('#5').attr('class', 'fa fa-star-o');
+            break;
+        case 2:
+            $('#1').attr('class', 'fa fa-star-o checked');
+            $('#2').attr('class', 'fa fa-star-o checked');
+            $('#3').attr('class', 'fa fa-star-o');
+            $('#4').attr('class', 'fa fa-star-o');
+            $('#5').attr('class', 'fa fa-star-o');
+            break;
+        case 3:
+            $('#1').attr('class', 'fa fa-star-o checked');
+            $('#2').attr('class', 'fa fa-star-o checked');
+            $('#3').attr('class', 'fa fa-star-o checked');
+            $('#4').attr('class', 'fa fa-star-o');
+            $('#5').attr('class', 'fa fa-star-o');
+            break;
+        case 4:
+            $('#1').attr('class', 'fa fa-star-o checked');
+            $('#2').attr('class', 'fa fa-star-o checked');
+            $('#3').attr('class', 'fa fa-star-o checked');
+            $('#4').attr('class', 'fa fa-star-o checked');
+            $('#5').attr('class', 'fa fa-star-o');
+            break;
+        case 5:
+            $('#1').attr('class', 'fa fa-star-o checked');
+            $('#2').attr('class', 'fa fa-star-o checked');
+            $('#3').attr('class', 'fa fa-star-o checked');
+            $('#4').attr('class', 'fa fa-star-o checked');
+            $('#5').attr('class', 'fa fa-star-o checked');
+            break;
+        default:
+            $('#1').attr('class', 'fa fa-star-o');
+            $('#2').attr('class', 'fa fa-star-o');
+            $('#3').attr('class', 'fa fa-star-o');
+            $('#4').attr('class', 'fa fa-star-o');
+            $('#5').attr('class', 'fa fa-star-o');
+    }
+}
+//
 function colocarModal(respuesta) {
     $('.modal-title').text(respuesta.Title);
     if (respuesta.Poster == 'N/A') {
@@ -118,5 +172,6 @@ function colocarModal(respuesta) {
     $('#actores').text(respuesta.Actors)
     $('#sinopsis').text(respuesta.Plot)
     $('#puntuacion').text(respuesta.imdbRating)
+    pintarEstrellas(respuesta);
     $('#modelId').modal("show");
 }
